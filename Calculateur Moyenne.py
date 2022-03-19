@@ -102,9 +102,9 @@ def end_note():
         note_on_20.append(float(
             note1_list[note_nbr]) * 20 / float(note2_list[note_nbr]) * float(coef_list[coef_nbr]))
 
-    total_coef = sum(list(map(int, coef_list)))
+    total_coef = sum(list(map(float, coef_list)))
     # moyenne finale
-    moyenne = sum(note_on_20) / total_coef
+    moyenne = round(sum(note_on_20) / total_coef, 2)
 
     # affichage : resultat final de la moyenne
     lb_final_result = Label(frame, font=(("Helvetica"), 30), fg="white",
