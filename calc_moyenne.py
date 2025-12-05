@@ -1,11 +1,8 @@
-# imports
 from tkinter import *
-from turtle import bgcolor, right
 
-# app instance
 app = Tk()
 
-# app config
+# config
 app.title("Calcul moyenne")
 app.config(background="#2C795D")
 app.geometry("1080x720")
@@ -16,16 +13,15 @@ frame = Frame(app, background="#2C795D")
 frame.pack(expand=YES)
 
 # widjets:
-
 # label pour donner des instructions pour l'utilisation de l'app
-lb = Label(frame, text="Entrer la note et son coefficient :\n\n",
+lb = Label(frame, text="Note :\n\n",
            font=(("Helvetica"), 30), fg="white", bg="#2C795D")
 
-# première partie de la note (numérateur)
+# numérateur
 note1 = Entry(frame, font=(("Courrier"), 15),
               fg="white", bg="#2C795D", width=5)
 
-# deuxième partie de la note (dénominateur)
+# dénominateur
 note2 = Entry(frame, font=(("Courrier"), 15),
               fg="white", bg="#2C795D", width=5)
 
@@ -74,7 +70,7 @@ def suivant_btn_press():
 
 
 def end_note():
-    # suppr de touts les éléments
+    # suppr de tous les éléments
     lb.pack_forget()
     note1.pack_forget()
     canvas.pack_forget()
@@ -108,7 +104,7 @@ def end_note():
 
     # affichage : resultat final de la moyenne
     lb_final_result = Label(frame, font=(("Helvetica"), 30), fg="white",
-                            bg="#2C795D", text="La moyenne finale des notes entrées est :\n\n")
+                            bg="#2C795D", text="Moyenne:\n\n")
     lb_final_result.pack()
 
     # affichage de la moyenne finale
@@ -128,5 +124,4 @@ end_note_btn = Button(app, text="Fin", fg="white",
 next_note_btn.pack(side=RIGHT, padx=40, pady=40)
 end_note_btn.pack(side=RIGHT)
 
-# affichage de la fenêtre
 app.mainloop()
